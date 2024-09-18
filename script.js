@@ -1,74 +1,83 @@
-const imgs = document.getElementById("img");
-const img = document.querySelectorAll("#img img");
+// script.js
 
-let idm = 0;
-
-function carrossel() {
-  idm++;
-
-  if (idm > img.length - 1) {
-    idm = 0;
-  }
-
-  imgs.style.transform = `tranlateX(${-idm * 500} px)`;
+// Função para abrir e fechar o menu
+function toggleMenu() {
+  const menu = document.querySelector(".menu");
+  menu.classList.toggle("open");
 }
 
-setInterval(carrossel, 1800);
+// Função para enviar formulário de contato
+function sendContactForm() {
+  const form = document.querySelector(".contact-form");
+  const nome = form.nome.value;
+  const email = form.email.value;
+  const mensagem = form.mensagem.value;
 
-// script.js
-const slides = document.querySelectorAll("#img img");
-const nextButton = document.querySelector("#next");
-const prevButton = document.querySelector("#prev");
+  // Enviar formulário para o servidor
+  fetch("/enviar-contato", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome,
+      email,
+      mensagem,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+}
 
-let currentSlide = 0;
+// Adicionar evento de clique ao botão de menu
+document.querySelector(".menu-button").addEventListener("click", toggleMenu);
 
-function showSlide() {
-  slides.forEach((slide, index) => {
-    if (index === currentSlide) {
-      slide.classList.add("active");
-    } else {
-      slide.classList.remove("active");
-    }
+// Adicionar evento de envio ao formulário de contato
+document
+  .querySelector(".contact-form")
+  .addEventListener("submit", sendContactForm);
+// Select the dropdown button and the submenu
+const dropdownButton = document.querySelector("#servicos");
+const submenu = document.querySelector("#submenu");
+
+// Add an event listener to the dropdown button
+dropdownButton.addEventListener("click", () => {
+  // Toggle the visibility of the submenu
+  submenu.classList.toggle("show");
+});
+
+let currentBox = 1;
+
+function showBox(boxNumber) {
+  const boxes = document.querySelectorAll(".box");
+  boxes.forEach((box, index) => {
+    box.style.display = index + 1 === boxNumber ? "block" : "none";
   });
 }
 
-nextButton.addEventListener("click", () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide();
+function showPreviousBox() {
+  currentBox = currentBox === 1 ? 3 : currentBox - 1;
+  showBox(currentBox);
+}
+
+function showNextBox() {
+  currentBox = currentBox === 3 ? 1 : currentBox + 1;
+  showBox(currentBox);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  showBox(currentBox);
 });
-
-prevButton.addEventListener("click", () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide();
-});
-
-// Adicione um timer para automatizar o carrossel
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide();
-}, 5000); // alterne as imagens a cada 5 segundos
-
-showSlide(); // Exibe o primeiro slide ao carregar a página
-var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-  },
+function navigateTo(url) {
+  window.location.href = url;
+}
+// Exemplo de como adicionar um efeito hover usando JavaScript
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("mouseover", () => {
+    link.style.color = "red";
+  });
+  link.addEventListener("mouseout", () => {
+    link.style.color = "";
+  });
 });
