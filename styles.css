@@ -1,121 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 body {
-  font-family: Arial, sans-serif;
-  background-color: #7a288a; /* Cor roxa */
+  background-color: #000;
+  height: 100vh;
 }
-
-.container {
-  max-width: 1000px;
+.interface {
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 20px;
+}
+header {
+  padding: 40px 4%;
+}
+header > .interface {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header a:hover {
+  color: aliceblue;
+  transform: scale(1, 05);
+}
+header a {
+  color: rgb(159, 187, 211);
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
 }
 
-.container h1 h2.center-text {
+header nav ul {
+  list-style-type: none;
+}
+header nav ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+}
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #00ff08;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 2s;
+}
+h2.titulo {
+  color: #fff;
+  font-size: 45;
   text-align: center;
 }
-
-.box {
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
+h2.titulo span {
+  color: #00ff08;
 }
 
-.centered-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  height: auto;
+.paragrafo-branco {
+  color: #fff;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+.btn-contato button:hover {
+  box-shadow: 0px 0px 8px;
+  transform: scale(1.05);
+}
+
+header .btn-contato button :hover {
+  box-shadow: 0px 0px 8px #36ef3c68;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+  color: #00ff08;
+}
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section.topo-do-site {
+  padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+.topo-do-site h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 40px;
+}
+.topo-do-site h1 span {
+  color: #00ff08;
+}
+.topo-do-site p {
+  color: #fff;
+  margin: 40px 0;
+  font-size: 18px;
+}
+.topo-do-site.img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+@keyframes flutuar {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 30px;
   }
 }
 
-.logo {
-  float: left;
-  margin-right: 20px;
+section.especialidades {
+  padding: 40px 4%;
+}
+.especilidades.especilidades-box {
+  color: #fff;
+  padding: 40px;
+  border: 2px solid;
+  flex: 1;
+  text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+section.especialidades .flex {
   display: flex;
+  gap: 60px;
+  justify-content: space-between; /* Distribui as caixas uniformemente */
+}
+section.especilidades.box .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.especilidades.box img {
+  font-size: 70px;
+  color: #00ff08;
+  display: inline-block;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 40px 4%;
+  margin: 40px 0;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+.especilidades.especilidades-box h3 {
+  font-size: 28px;
+  margin: 15px 15px;
 }
 
-nav li {
-  margin-right: 20px;
+section.especialidades .flex {
+  gap: 60px;
+}
+.especilidades.especilidades-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px;
 }
 
-nav a {
-  color: #fff; /* Cor branca */
-  text-decoration: none;
+.espacamento {
+  height: 40px; /* ajuste o valor de acordo com sua necessidade */
 }
-
-footer {
-  background-color: #333;
+.titulo {
+  margin-bottom: 40px; /* ajuste o valor de acordo com sua necessidade */
+}
+.habilidade-branco-verde {
   color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+
+  padding: 40px;
+  transition: filter 0.3s ease;
+  filter: hue-rotate(90deg) brightness(0.5);
+  opacity: 0; /* começa invisível */
+  animation: aparecer 5s ease-in-out forwards; /* animação de 5 segundos */
+  white-space: pre; /* para garantir que os espaços e quebras de linha sejam mantidos */
 }
 
-.footer-content a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
+.especial-texto {
+  color: #00ff08; /* cor verde */
+  opacity: 0; /* começa invisível */
+  animation: aparecer 5s ease-in-out forwards; /* animação de 5 segundos */
+  white-space: pre; /* para garantir que os espaços e quebras de linha sejam mantidos */
 }
 
-.navigation-buttons {
-  text-align: center;
-  margin-top: 20px;
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-.navigation-buttons button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.navigation-buttons button:hover {
-  background-color: #555;
-}
-.colored-text {
-  color: #f4f4f4; /* Cor do texto, ajuste conforme necessário */
-}
-/* Adicionando o efeito hover vermelho */
-a:hover {
-  color: rgb(47, 0, 255);
-}
-
-/* Ajustando o tamanho da imagem */
-.centered-image {
+.imagem {
+  display: block;
+  margin: 4 auto 10px;
   max-width: 100%;
   height: auto;
 }
 
-/* Adicionando o efeito hover vermelho */
-a:hover,
-img:hover,
-p:hover,
-h1:hover,
-h3:hover {
-  color: red;
-  filter: hue-rotate(180deg); /* Para a imagem ficar vermelha */
+.habilidade-branco-verde {
+  color: #00ff00; /* Ajuste de cor conforme desejado */
+  font-size: 1.5em;
+  margin: 10px 0;
 }
-body:hover {
-  background-color: #34c759; /* Verde */
-  transition: background-color 0.5s; /* Efeito de transição */
+
+.paragrafo-branco {
+  color: white;
+  font-size: 1em;
+  line-height: 1.5em;
 }
+
+section.sobre {
+  padding: 80px 4%;
+}
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+.sobre.txt-sobre.p {
+  color: #fff;
+  margin: 40px 0;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+.Sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px; /* Espaçamento superior */
+}
+
+div .sobre.h2 {
+  color: #fff;
+  font-family: "Courier New", Courier, monospace; /* Fonte de digitação */
+  white-space: pre-wrap;
+}
+
+.img-sobre img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tex.sobre {
+  max-width: 600px; /* Ajuste conforme necessário */
+  text-align: left;
+  color: white;
+  font-family: "Courier New", Courier, monospace; /* Fonte de digitação */
+  white-space: pre-wrap;
+}
+
+.typewriter p {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* Cursor de digitação */
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+.typewriter::after {
+  content: "|"; /* Aparece como um cursor no final do texto */
+  animation: blink-caret 0.75s step-end infinite;
+}
+.projetos {
+  text-align: justify;
+  line-height: 1.6;
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #000; /* Define o fundo do corpo como preto */
+  height: 100vh;
+}
+
+#projetos {
+  padding: 40px 4%;
+  color: #fff; /* Define a cor do texto como branca */
+  margin: 40 0;
+  margin-left: 20px;
+}
+
+#projetos h1 {
+  font-size: 25px; /* Aumenta o tamanho da fonte do título */
+  margin-bottom: 20px; /* Adiciona um espaçamento abaixo do título */
+}
+
+#projetos ul {
+  list-style: none; /* Remove a formatação de lista */
+  padding: 0; /* Remove o padding padrão da lista */
+  margin: 0; /* Remove o margin padrão da lista */
+}
+
+#projetos li {
+  margin-bottom: 40px; /* Adiciona um espaçamento entre os itens da lista */
+}
+
+#projetos li h2 {
+  font-size: 24px; /* Aumenta o tamanho da fonte do subtítulo */
+  /* Adiciona um espaçamento abaixo do subtítulo */
+  
+}
+
+#projetos p {
+  text-align: justify;
+  font-size: 18px; /* Aumenta o tamanho da fonte do parágrafo */
+}
+
+#contatos {
+  padding: 40px 4%;
+  margin-top: 40px; /* Adiciona um espaçamento acima da seção de contatos */
+  color: #fff; /* Define a cor do texto como branca */
+}
+
+#contatos h1 {
+  font-size: 25px; /* Aumenta o tamanho da fonte do título */
+  margin-bottom: 20px; /* Adiciona um espaçamento abaixo do título */
+}
+
+#contatos p {
+  font-size: 18px; /* Aumenta o tamanho da fonte do parágrafo */
+}
+#projetos, #contatos {
+  margin-left: 20px; /* Ajuste a margem esquerda conforme necessário */
+  text-align: left;
+}
+
+#projetos h1, #contatos h1, #projetos h2, #contatos h2 {
+  text-align: center;
+}
+
+#projetos p, #contatos p {
+  
+  font-size: 18px; /* Aumenta o tamanho da fonte do parágrafo */
+  text-align: justify;
+  line-height: 1.6;
+  color: #fff;
+}
+.projetotitulo h2  span {
+  color: #00ff08;
+}
+  
+
+
+
+/* Adicionando efeito de slide */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#projetos p, #contatos p {
+  animation: slideIn 1s ease-in-out;
+}
+
+
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+
+  header .interface, .topo-do-site .interface, .especialidades .interface {
+    padding: 40px 8%;
+    margin-left: 10px;
+  }
+
+  
+
+  .topo-do-site p {
+    font-size: 16px;
+  }
+  section.especialiades{
+    padding: 40px 8%;
+  }
+
+  .especialidades h2 {
+    font-size: 24px;
+  }
+
+  .especilidades-box h3 {
+    font-size: 20px;
+  }
+
+  .especilidades-box p {
+    font-size: 16px;
+  }
+  section .Sobre{
+    padding: 80px 8%;
+  }
+  .sobre .tex.sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+
+  }
+  .topo-do-site.img-topo-site img {
+    width: 100px;
+  }
+  .sobre.txt-sobre.h2{
+    font-size: 34px;
+    line-height: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn-social{
+    text-align: center;
+  }
+  .img-sobre img{
+    width: 100px;
+  }
+  section.portifolio .flex{
+    width: 100px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  section.portifolio .flex{
+    gap: 60px;
+  }
+  footer.flex{
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  img-port {
+    width: 100px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  footer .line-footer {
+    padding: 20px 0;
+    text-align: center;
+  }
+  #projetos .h2 {
+    margin-bottom: 0; /* Remove o espaço inferior */
+    padding-bottom: 10px; /* Ajuste conforme necessário */
+  }
+  
+  #contatos {
+    margin-top: 0; /* Remove o espaço superior */
+    padding-top: 10px; /* Ajuste conforme necessário */
+  }
+  }
+
+
+@media (max-width: 480px) {
+  header .interface, .topo-do-site .interface, .especialidades .interface {
+    padding: 10px 1%;
+    margin-left: 5px;
+  }
+  .topo-do-site h1 {
+    font-size: 30px;
+  }
+  
+
+  .topo-do-site p {
+    font-size: 14px;
+  }
+
+  .especialidades h2 {
+    font-size: 20px;
+  }
+
+  .especilidades-box h3 {
+    font-size: 18px;
+  }
+
+  .especilidades-box p {
+    font-size: 14px;
+  }
+}
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .flex{
+    flex-direction: column-reverse;
+  }
+  h2.titulo {
+  font-size:34px
+  
+
+  }
+  .menu-desktop,.btn-contato{
+    display: none;
+  }
+  section.topo-do-site{
+    padding: 20px; ;
+  }
+  .topo-do-site h1 {
+    font-size: 30px;
+  }
+  .topo-do-site.img-topo-site img{
+    width: 100%;
+  }
+  body {
+    height: auto;
+  }
+  .menu-desktop.btn-contato{
+    display: none;
+  }
+  section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  section.topo-do-site{
+    padding: 20px 8%;
+     
+  }
+  .topo-do-site h1{
+    font-size: 30px;
+    
+  }
+  .topo-do-site.img-topo-site img{
+    width: 100%;
+  }
+  @media screen and (max-width:866px){
+
+
+  }
+
+  .flex{
+    flex-direction: column-reverse;
+  }
+  h2.titulo{
+    font-size: 30px;
+    line-height: 30px;
+  }
+  
+  #projetos, #contatos {
+    padding: 20px 2%;
+    margin-left: 10px;
+  }
+
+  #projetos h1, #contatos h1 {
+    font-size: 28px;
+  }
+
+  #projetos li h2, #contatos h2 {
+    font-size: 20px;
+  }
+
+  #projetos p, #contatos p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #projetos, #contatos {
+    padding: 10px 1%;
+    margin-left: 5px;
+  }
+
+  #projetos h1, #contatos h1 {
+    font-size: 24px;
+  }
+
+  #projetos li h2, #contatos h2 {
+    font-size: 18px;
+  }
+
+  #projetos p, #contatos p {
+    font-size: 14px;
+  }
+}
+
+  
