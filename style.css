@@ -1,0 +1,270 @@
+/* styles.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("imagens/ima.webp");
+  background-size: cover;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 640px;
+  height: 360px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  overflow: unset;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+div img {
+  width: 100%;
+  height: 100px;
+  margin: 20px;
+  display: block;
+  justify-content: center;
+}
+
+.imagem-codigo {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+.icons img {
+  transition: transform 0.9s ease-in-out;
+
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+button {
+  transition: background-color 0.9s ease-in-out;
+}
+button {
+  animation: pulse 50s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.carrossel {
+  transition: transform 0.12s ease-in-out;
+}
+
+.carrossel:hover {
+  transform: translateX(10px);
+}
+
+.carrossel {
+  animation: slide 120s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.icons img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.carrossel {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.container img.active {
+  transform: translateX(0);
+}
+
+.container img:not(.active) {
+  transform: translateX(-100%);
+}
+
+/* Estilos gerais */
+
+/* Estilos para a imagem e overlay */
+.imagem-codigo {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.imagem-codigo img {
+  width: 10%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay h1,
+.overlay p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para os ícones */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icons img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilos para o carrossel */
+.carrossel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: 0px 0;
+}
+
+.container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para os botões de navegação */
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Estilos para a seção de informações do curso */
+.novo-margin-maxima {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.novo-texto-subtitulo-graduacao,
+.novo-texto-sub-graduacao {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.novo-texto-graduacao,
+.novo-itens-texto-graduacao {
+  color: #666;
+  line-height: 1.6;
+}
+.container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
